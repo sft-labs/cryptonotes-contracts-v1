@@ -7,10 +7,10 @@ async function main() {
   console.log('signer address:', address)
 
   // Deploy the notes metadata descriptor contract
-  // const NotesMetadataDescriptor = await ethers.getContractFactory('NotesMetadataDescriptor')
-  // const descriptor = await NotesMetadataDescriptor.deploy()
-  // await descriptor.deployed()
-  // console.log('NotesMetadataDescriptor deployed to:', descriptor.address)
+  const NotesMetadataDescriptor = await ethers.getContractFactory('NotesMetadataDescriptor')
+  const descriptor = await NotesMetadataDescriptor.deploy()
+  await descriptor.deployed()
+  console.log('NotesMetadataDescriptor deployed to:', descriptor.address)
 
   const Cryptonotes = await ethers.getContractFactory('Cryptonotes')
 
@@ -21,8 +21,8 @@ async function main() {
     'Ethereum Commemorative Cryptonotes',
     'ETHCC',
     18,
-    '0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e', // Chainlink ETH/USD price feed address Mumbai: 0x0715A7794a1dc8e42615F059dD6e406A6594651A, Goerli: 0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e
-    '0x34145C89C1ba96C81cd14D09849c5B404bB413e6' //descriptor.address
+    '0x694AA1769357215DE4FAC081bf1f309aDC325306', // Chainlink ETH/USD price feed address Mumbai: 0x0715A7794a1dc8e42615F059dD6e406A6594651A, Goerli: 0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e
+    descriptor.address
   ])
   console.log('Cryptonotes deployed to:', cryptonotes.address)
   

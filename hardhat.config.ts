@@ -17,14 +17,9 @@ const config: HardhatUserConfig = {
     },
   },
   networks: {
-    goerli: {
-      url: process.env.GOERLI_RPC || 'https://rpc.ankr.com/eth_goerli',
-      chainId: 5,
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] :  [],
-    },
-    mumbai: {
-      url: process.env.MUMBAI_RPC || 'https://rpc.ankr.com/polygon_mumbai',
-      chainId: 80001,
+    sepolia: {
+      url: process.env.SEPOLIA_RPC || 'https://rpc.ankr.com/eth_sepolia',
+      chainId: 11155111,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] :  [],
     },
   },
